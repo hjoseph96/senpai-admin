@@ -1,0 +1,96 @@
+// Sassy
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+@import "bulma";
+@import "admin_splash";
+@import "admin_users";
+
+.bg-container {
+  background-color: gainsboro;
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+
+  table {
+    width: 65%;
+    margin: 0 auto;
+    background: azure;
+    border: 2px solid;
+    padding: 3em;
+    border-radius: 19px;
+  }
+}
+
+.senpai-nav {
+  background-color: rgb(14, 17, 25);
+  color: white;
+  min-height: 6.055em;
+
+  .navbar-brand {
+    min-height: 5.85em;
+
+    .logo-img {
+      max-height: 3.15rem;
+      margin-left: 23px;
+      margin-top: 8px;
+      padding-top: 4px;
+      margin-bottom: 8px;
+    }
+  }
+
+  .navbar-burger {
+    color: snow;
+  }
+
+  .navbar-menu {
+    display: inline-grid;
+    float: right;
+  }
+
+
+
+  .link-list {
+    width: 72%;
+    display: flex;
+    justify-content: center;
+    margin-left: 4vw;
+    margin-top: 16px;
+    font-size: 17px;
+
+    a {
+      color: snow;
+      font-weight: 700;
+      &:hover, &:active {
+        background-color: rgb(14, 17, 25);
+        color: snow;
+      }
+    }
+
+    .navbar-item {
+
+      &:hover, &:active, &:focus-visible, &:focus {
+        background-color: rgb(14, 17, 25);
+        color: snow;
+      }
+
+      .navbar-link {
+        background-color: rgb(14, 17, 25) !important;
+        color: snow !important;
+
+        &:hover, &:active {
+          background-color: rgb(14, 17, 25);
+          color: snow;
+        }
+      }
+
+      .navbar-dropdown {
+        background-color: #5C6376;
+      }
+    }
+  }
+
+  .button.is-primary {
+    background-color: #5B6277 !important;
+  }
+
+}

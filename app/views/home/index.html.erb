@@ -1,0 +1,28 @@
+
+
+<section>
+  <div class="admin-login">
+    <h3>Senpai Admin Console</h3>
+
+    <%= form_with model: @user, class: 'login-form', url: user_registration_path, method: :post do |form| %>
+      <div class="control has-icons-left has-icons-right">
+        <%= form.label :email, class: 'label' %>
+        <%= form.text_field :email, class: 'input is-success', placeholder: 'Email' %>
+
+        <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+        </span>
+        <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+      </div>
+
+      <div class="control has-icons-left has-icons-right">
+        <%= form.label :password, class: 'label' %>
+        <%= form.password_field :password%>
+      </div>
+
+      <%= form.submit 'Login', class: 'button is-primary' %>
+    <% end %>
+  </div>
+</section>

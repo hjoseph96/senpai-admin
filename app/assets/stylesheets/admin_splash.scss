@@ -1,0 +1,42 @@
+
+body.home-index {
+  font-family: 'Roboto', serif;
+
+  .admin-login {
+    padding: 4vh 9vw;
+    background: whitesmoke;
+    border-radius: 1.3rem;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+    margin: 10vh auto;
+    width: 35vw;
+
+    h3 {
+      font-size: 1.5rem;
+      text-align: center;
+      font-weight: 200;
+    }
+    .control {
+      width: 100%;
+      margin: 20px 0;
+
+      input {
+        width: 100%;
+
+        &[type='password'] {
+          padding: 0.5rem 0.5rem;
+        }
+      }
+
+      .submit {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+
+  .bg-container {
+    background-image: url(https://images.unsplash.com/photo-1544111795-fe8b9def73f6?q=80&w=2539&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: contain;
+  }
+
+}

@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "datatables.net-autofill-bm": "^2.6.0",
+    "datatables.net-bm": "^1.13.8",
+    "datatables.net-buttons-bm": "^2.4.2",
+    "jquery": "^3.7.1"
+  }
+}
