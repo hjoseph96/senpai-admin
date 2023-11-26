@@ -1,8 +1,6 @@
-<% %>
 
 <div class="bg-container">
-  <h2>Users</h2>
-  <table id="users-datatable" style="margin: 3rem 0rem;" data-source="<%= user_list_path(format: :json) %>">
+  <table id="users-datatable" style="margin: 3rem auto;" data-source="<%= user_list_path(format: :json) %>">
     <thead>
       <tr>
         <th>ID</th>
@@ -22,23 +20,23 @@
     </thead>
 
     <tbody>
-    <% @data.each do |user|  %>
-      <tr>
-        <td><%= user.id %></td>
-        <td><%= user.phone %></td>
-        <td><%= user.first_name %></td>
-        <td><%= user.gender %></td>
-        <td><%= user.verified %></td>
-        <td><%= user.display_city %></td>
-        <td><%= user.display_state %></td>
-        <td><%= user.latlong.lat %></td>
-        <td><%= user.latlong.long %></td>
-        <td><%= user.age %></td>
-        <td><%= user.occupation %></td>
-        <td><%= user.created_at %></td>
-        <td><%= user.premium %></td>
-      </tr>
-    <% end %>
+      <% @data.each do |user|  %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.phone %></td>
+          <td><%= user.first_name %></td>
+          <td><%= user.gender %></td>
+          <td><%= user.verified %></td>
+          <td><%= user.display_city %></td>
+          <td><%= user.display_state %></td>
+          <td><%= user.latlong.lat %></td>
+          <td><%= user.latlong.long %></td>
+          <td><%= user.age %></td>
+          <td><%= user.occupation %></td>
+          <td><%= user.created_at %></td>
+          <td><%= user.premium %></td>
+        </tr>
+      <% end %>
     </tbody>
   </table>
 </div>

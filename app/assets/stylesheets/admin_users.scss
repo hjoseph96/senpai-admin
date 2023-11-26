@@ -1,5 +1,71 @@
-body.users-index {
-  .column {
+body.users-view_map {
+  .leaflet-popup-content {
+    width: 11vw;
 
+    h3 {
+      font-size: 2rem;
+      font-family: Roboto, sans-serif;
+      letter-spacing: -0.7px;
+      text-align: center;
+    }
   }
 }
+
+body.users-show {
+  header {
+    margin-top: 97px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    border-bottom: 2px solid black;
+    background: linear-gradient(45deg, #93059F, #094DAC);
+
+    img {
+      width: 24vw;
+    }
+  }
+  .title {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    border-bottom: 3px solid black;
+  }
+
+  h1 {
+    width: 100%;
+    text-align: center;
+    font-family: Roboto;
+    font-weight: 600;
+    font-size: 2.3em;
+  }
+
+  .splide {
+  }
+
+  .splide__slide {
+    text-align: center;
+
+    img { width: 20vw; max-width: 20vw; }
+  }
+
+  .panel {
+    width: 65vw;
+    margin: 0 auto;
+  }
+
+  .panel-block {
+    font-size: 1.3rem;
+  }
+  .panel-heading {
+    background-color: #5b6277 !important;
+    color: whitesmoke;
+  }
+  .panel {
+    width: 65vw;
+    margin: 3vh auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+  .buttons form:first-child{ margin-right: 15px;}
+  .buttons form:first-of-type{ margin-right: 15px;}
+}
+

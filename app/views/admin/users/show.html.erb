@@ -1,0 +1,90 @@
+<header>
+  <div class="title">
+    <img src="<%= @user.cover_photo_url %>" />
+  </div>
+</header>
+
+<section class="splide" id="image-carousel">
+  <h1><%= @user.first_name %></h1>
+
+  <div class="splide__track">
+    <ul class="splide__list">
+      <% @user.photos.each do  |url|%>
+        <li class="splide__slide">
+          <img src="<%= url %>" />
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</section>
+
+<section class="user-info">
+  <nav class="panel">
+    <p class="panel-heading">
+      User Information
+    </p>
+    <div class="panel-block">
+      <span class="panel-icon">
+        <i class="fas fa-phone" aria-hidden="true"></i>
+      </span>
+
+      <%= @user.phone %>
+    </div>
+    <a class="panel-block is-active">
+      <span class="panel-icon">
+        <i class="fa-solid fa-venus-mars"></i>
+      </span>
+      <%= @user.gender.capitalize %>
+    </a>
+    <a class="panel-block">
+      <span class="panel-icon">
+        <i class="fas fa-calendar" aria-hidden="true"></i>
+      </span>
+      Sign Up Date: <%= @user.created_at %>
+    </a>
+    <a class="panel-block">
+      <span class="panel-icon">
+        <i class="fas fa-check" aria-hidden="true"></i>
+      </span>
+      Verified: <%= @user.verified %>
+    </a>
+    <a class="panel-block">
+      <span class="panel-icon">
+        <i class="fa-regular fa-dollar-sign"></i>
+      </span>
+      Premium?: <%= @user.premium %>
+    </a>
+    <% if @user.display_city.present? %>
+      <a class="panel-block">
+        <span class="panel-icon">
+          <i class="fa-regular fa-location-pin"></i>
+        </span>
+        <%= @user.display_city.capitalize %>, <%= @user.display_state.capitalize %>
+      </a>
+    <% end %>
+    <a class="panel-block">
+      <span class="panel-icon">
+        <i class="fa-solid fa-gavel"></i>
+      </span>
+      Warnings: <%= @user.warning_count %>
+    </a>
+    <a class="panel-block">
+      <span class="panel-icon">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+      </span>
+      Banned?: <%= @user.banned %>
+    </a>
+
+
+    <div class="panel-block buttons">
+      <%= form_tag warn_user_path(@user.id), method: :post do |form| %>
+        <%= submit_tag 'Warn User', class: 'button is-warning' %>
+      <% end %>
+
+      <%= form_tag ban_user_path(@user.id), method: :post do |form| %>
+        <%= submit_tag 'Ban User', class: 'button is-danger' %>
+      <% end %>
+    </div>
+
+  </nav>
+</section>

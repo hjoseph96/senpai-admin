@@ -4,12 +4,22 @@
 @import "bulma";
 @import "admin_splash";
 @import "admin_users";
+@import "admin_user_map";
+@import "admin_demographics";
 
 .bg-container {
   background-color: gainsboro;
   width: 100%;
   height: 100vh;
   overflow-y: scroll;
+
+  .dataTables_length, .dataTables_filter {
+    background: white;
+    border-radius: 6px;
+    padding: 0.5em 1em;
+    display: flex;
+    margin: 130px 1em 0;
+  }
 
   table {
     width: 65%;
@@ -25,6 +35,9 @@
   background-color: rgb(14, 17, 25);
   color: white;
   min-height: 6.055em;
+  z-index: 9999999;
+  position: fixed;
+  width: 100%;
 
   .navbar-brand {
     min-height: 5.85em;
@@ -94,3 +107,11 @@
   }
 
 }
+
+//body.users-view_map {
+#map {
+  background-color: whitesmoke;
+  width: 75vw;
+  height: 75vw;
+}
+//}

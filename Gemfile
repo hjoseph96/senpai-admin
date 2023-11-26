@@ -33,6 +33,8 @@ group :development, :test do
 end
 
 gem 'faraday'
+gem 'chartkick'
+gem 'graphlient'
 
 group :development do
   gem "web-console"

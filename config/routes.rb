@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
 
-  get '/user_list' => 'admin/users#index'
-
+  get '/user_list' => 'admin/users#index', as: :user_list
+  get '/users/:id' => 'admin/users#show', as: :user_show
+  get '/user_map' => 'admin/users#view_map', as: :user_map
+  get '/user_demographics' => 'admin/users#demographics'
+  post '/users/:id/ban' => 'admin/users#ban_user',as: :ban_user
+  post '/users/:id/warning' => 'admin/users#warn_user', as: :warn_user
 end
