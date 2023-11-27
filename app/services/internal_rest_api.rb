@@ -14,12 +14,28 @@ class InternalRestApi
     new.fetch_user(user_id)
   end
 
-  def self.ban_user(user_id)
+  def self.ban_user(user_id, ban: true)
     new.ban_user(user_id)
   end
 
   def self.warn_user(user_id)
     new.warn_user(user_id)
+  end
+
+  def self.fetch_verify_requests(page: 1)
+    new.fetch_verify_requests(page: page)
+  end
+
+  def self.fetch_verify_request(request_id)
+    new.fetch_verify_request(request_id)
+  end
+
+  def self.deny(request)
+    new.deny(request)
+  end
+
+  def self.approve(request)
+    new.approve(request)
   end
 
   def initialize(page: 1)
@@ -48,6 +64,26 @@ class InternalRestApi
 
   def ban_user(user_id)
     res = @conn.post("v1/admin/users/#{user_id}/ban_user").body
+    @data = JSON.parse(res, object_class: OpenStruct)
+  end
+
+  def fetch_verify_requests(page: 1)
+    res = @conn.post("/v1/admin/verify_request?page=#{page}").body
+    @data = JSON.parse(res, object_class: OpenStruct)
+  end
+
+  def fetch_verify_request(request_id)
+    res = @conn.post("/v1/admin/verify_request/#{request_id}").body
+    @data = JSON.parse(res, object_class: OpenStruct)
+  end
+
+  def approve(request_id)
+    res = @conn.post("/v1/admin/verify_request/#{request_id}/approve").body
+    @data = JSON.parse(res, object_class: OpenStruct)
+  end
+
+  def deny(request_id)
+    res = @conn.post("/v1/admin/verify_request/#{request_id}/deny").body
     @data = JSON.parse(res, object_class: OpenStruct)
   end
 end

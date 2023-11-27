@@ -1,0 +1,33 @@
+<h1>Verify Requests</h1>
+
+'<table id="users-datatable" style="margin: 3rem auto;" data-source="<%= user_list_path(format: :json) %>">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Status</th>
+    <th>Date Submitted</th>
+    <th>View User</th>
+    <th>Review Request'</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @data.each do |req|  %>
+    <tr>
+      <td><%= req.id %></td>
+      <td><%= req.status %></td>
+      <td><%= Date.parse(req.created_at).strftime('%m/%d/%Y') %></td>
+      <td>
+        <%= link_to "/users/#{req.user_id}" do %>
+          View User
+        <% end %>
+      </td>
+      <td>
+        <%= link_to "/verify_requests/#{req.id}" do %>
+          View Request
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

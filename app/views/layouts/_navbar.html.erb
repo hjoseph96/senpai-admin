@@ -24,7 +24,11 @@
           <% end %>
         </div>
       </div>
-      <a class="navbar-item" href="#o">Verify Requests</a>
+      <a class="navbar-item" href="#o">
+        <%= link_to verify_requests_path, class: 'navbar-item' do %>
+          Verify Requests
+        <% end %>
+      </a>
       <a class="navbar-item" href="#o">Chat Reports</a>
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">

@@ -4,7 +4,7 @@
   </div>
 </header>
 
-<section class="splide" id="image-carousel">
+<section class="splide" id="verify-carousel">
   <h1><%= @user.first_name %></h1>
 
   <div class="splide__track">
@@ -40,7 +40,7 @@
       <span class="panel-icon">
         <i class="fas fa-calendar" aria-hidden="true"></i>
       </span>
-      Sign Up Date: <%= @user.created_at %>
+      Sign Up Date: <%= Date.parse(@user.created_at).strftime('%m/%d/%Y') %>
     </a>
     <a class="panel-block">
       <span class="panel-icon">
@@ -81,8 +81,9 @@
         <%= submit_tag 'Warn User', class: 'button is-warning' %>
       <% end %>
 
-      <%= form_tag ban_user_path(@user.id), method: :post do |form| %>
-        <%= submit_tag 'Ban User', class: 'button is-danger' %>
+      <% text = @user.banned ? 'Unban User' : 'Ban User'%>
+      <%= form_tag ban_user_path(@user.id, ban: false), method: :post do |form| %>
+        <%= submit_tag text, class: 'button is-danger' %>
       <% end %>
     </div>
 

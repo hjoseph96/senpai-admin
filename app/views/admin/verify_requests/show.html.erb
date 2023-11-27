@@ -1,0 +1,45 @@
+<!--#<OpenStruct id=1, user_id=506, -->
+<!--             status="pending", -->
+<!--             created_at="2023-11-26T21:05:29.196Z", -->
+<!--             submitted_photo="https://d2dafkwzq2hfgj.cloudfront.net/dev/0hwdb2njdhsp9fx2n3e1m7ox4856", -->
+<!--             uploaded_photos=["https://d2dafkwzq2hfgj.cloudfront.net/dev/g4k3241977wy3q3w1rl5m99drv2u"]>-->
+
+<h1>Verify Request <%= @request.id %></h1>
+
+<div class="photo-compare">
+  <div class="submitted-photo">
+    <img src="<%= @request.submitted_photo %>" alt="">
+  </div>
+  <div class="splide" id="image-carousel">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <% @request.uploaded_photos.each do  |url|%>
+          <li class="splide__slide">
+            <img src="<%= url %>" />
+          </li>
+        <% end %>
+
+        <li class="splide__slide">
+          <%= image_tag 'transparent-s-logo.png' %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<section>
+  <p>To prevent fake and catfish profiles, we must manually grant "verified" status.'</p>
+
+  <div class="buttons">
+    <div class="approve">
+      <%= form_tag approve_request_path(@request.id), method: :post do %>
+        <%= submit_tag 'Approve', class: 'button is-success' %>
+      <% end %>
+    </div>
+    <div class="deny">
+      <%= form_tag deny_request_path(@request.id), method: :post do %>
+        <%= submit_tag 'Deny', class: 'button is-danger' %>
+      <% end %>
+    </div>
+  </div>
+</section>

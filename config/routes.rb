@@ -16,4 +16,9 @@ Rails.application.routes.draw do
   get '/user_demographics' => 'admin/users#demographics'
   post '/users/:id/ban' => 'admin/users#ban_user',as: :ban_user
   post '/users/:id/warning' => 'admin/users#warn_user', as: :warn_user
+
+  get 'verify_requests' => 'admin/verify_requests#index'
+  get 'verify_requests/:id' => 'admin/verify_requests#show'
+  post 'verify_requests/:id/deny' => 'admin/verify_requests#deny', as: :deny_request
+  post 'verify_requests/:id/approve' => 'admin/verify_requests#approve', as: :approve_request
 end

@@ -51,6 +51,7 @@ $( document ).on('turbo:load', function() {
     }
 
     new Splide( '#image-carousel').mount();
+    new Splide( '#verify-carousel', { fixedWidth: '24vw' }).mount();
 
 });
 
