@@ -13,13 +13,11 @@ class Admin::VerifyRequestsController < ApplicationController
 
   def approve
     @request = InternalRestApi.approve(strong_params['id'])
-    binding.pry
     redirect_to verify_requests_path
   end
 
   def deny
     @request = InternalRestApi.deny(strong_params['id'])
-    binding.pry
     redirect_to verify_requests_path
   end
 
