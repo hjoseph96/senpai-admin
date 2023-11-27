@@ -50,8 +50,13 @@ $( document ).on('turbo:load', function() {
         })
     }
 
-    new Splide( '#image-carousel').mount();
-    new Splide( '#verify-carousel', { fixedWidth: '24vw' }).mount();
+    let gallery = document.getElementById('image-carousel');
+    if (gallery)
+        new Splide( '#image-carousel').mount();
+
+    gallery = document.getElementById('verify-carousel');
+    if (gallery)
+        new Splide( '#verify-carousel', { fixedWidth: '24vw' }).mount();
 
 });
 

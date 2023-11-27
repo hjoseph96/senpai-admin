@@ -18,6 +18,7 @@ body.verify_requests-show {
     text-align: center;
     font-size: 3rem;
     letter-spacing: -2.1px;
+    color: whitesmoke;
   }
 
   .photo-compare {
@@ -29,6 +30,7 @@ body.verify_requests-show {
       display: flex;
       overflow: hidden;
       width: 25vw !important;
+
       .splide__pagination {
         visibility: visible;
       }
