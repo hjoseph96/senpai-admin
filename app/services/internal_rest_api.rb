@@ -38,6 +38,18 @@ class InternalRestApi
     new.approve(request)
   end
 
+  def self.fetch_all_reports(page: 1)
+    new.fetch_all_reports(page: page)
+  end
+
+  def self.fetch_report(report_id)
+    new.fetch_report(report_id)
+  end
+
+  def self.resolve_report(report_id)
+    new.resolve_report(report_id)
+  end
+
   def initialize(page: 1)
     @conn = Faraday.new(url: 'http://localhost:3001/')
   end
@@ -84,6 +96,21 @@ class InternalRestApi
 
   def deny(request_id)
     res = @conn.post("/v1/admin/verify_request/#{request_id}/deny").body
+    @data = JSON.parse(res, object_class: OpenStruct)
+  end
+
+  def fetch_all_reports(page: 1)
+    res = @conn.get("/v1/admin/reports?page=#{page}").body
+    @data = JSON.parse(res, object_class: OpenStruct)
+  end
+
+  def fetch_report(report_id)
+    res = @conn.get("/v1/admin/reports/#{report_id}/").body
+    @data = JSON.parse(res, object_class: OpenStruct)
+  end
+
+  def resolve_report(report_id)
+    res = @conn.post("/v1/admin/reports/#{report_id}/resolve").body
     @data = JSON.parse(res, object_class: OpenStruct)
   end
 end

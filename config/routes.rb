@@ -21,4 +21,8 @@ Rails.application.routes.draw do
   get 'verify_requests/:id' => 'admin/verify_requests#show'
   post 'verify_requests/:id/deny' => 'admin/verify_requests#deny', as: :deny_request
   post 'verify_requests/:id/approve' => 'admin/verify_requests#approve', as: :approve_request
+
+  get 'reports' => 'admin/reports#index'
+  get 'reports/:id' => 'admin/reports#show'
+  post 'reports/:id/resolve' => 'admin/reports#resolve', as: :resolve_report
 end

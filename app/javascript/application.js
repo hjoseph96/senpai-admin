@@ -8,6 +8,7 @@ import  './users_datatable';
 
 $( document ).on('turbo:load', function() {
     $("#users-datatable ").DataTable();
+    $("#reports-datatable ").DataTable();
 
 
     const container = document.getElementById('map')
