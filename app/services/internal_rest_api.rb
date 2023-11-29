@@ -51,7 +51,7 @@ class InternalRestApi
   end
 
   def initialize(page: 1)
-    @conn = Faraday.new(url: 'http://localhost:3001/')
+    @conn = Faraday.new(url:  ENV['API_URL'])
   end
 
   def fetch_user(user_id)

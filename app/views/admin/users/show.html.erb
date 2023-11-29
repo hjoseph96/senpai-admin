@@ -10,8 +10,8 @@
 
   <div class="splide__track">
     <ul class="splide__list">
-      <% @user.photos.each do  |url|%>
-        <li class="splide__slide">
+      <% @user.photos.each_with_index  do  |url, index|%>
+        <li class="splide__slide <%= index %>" >
           <img src="<%= url %>" />
         </li>
       <% end %>

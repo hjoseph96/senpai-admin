@@ -57,7 +57,7 @@ $( document ).on('turbo:load', function() {
 
     gallery = document.getElementById('verify-carousel');
     if (gallery)
-        new Splide( '#verify-carousel', { fixedWidth: '24vw' }).mount();
+        new Splide( '#verify-carousel', {  perPage: 3, arrows: true, loop: true }).mount();
 
 });
 
