@@ -56,7 +56,7 @@ $( document ).on('turbo:load', function() {
         new Splide( '#image-carousel').mount();
 
     gallery = document.getElementById('verify-carousel');
-    if (gallery)
+    if (gallery)d
         new Splide( '#verify-carousel', {  perPage: 3, arrows: true, loop: true }).mount();
 
 });
