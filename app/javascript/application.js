@@ -25,7 +25,7 @@ $( document ).on('turbo:load', function() {
         }).addTo(map);
 
 
-        axios.get('https://localhost:3001/v1/admin/users/all_users').then((response) => {
+        axios.get('https://staging.senpaiapp.com/v1/admin/users/all_users').then((response) => {
             response.data.forEach((u) => {
                 let iconUrl = ''
 
