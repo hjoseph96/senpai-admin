@@ -4,7 +4,7 @@
   <div class="admin-login">
     <h3>Senpai Admin Console</h3>
 
-    <%= form_with model: @user, class: 'login-form', url: user_registration_path, method: :post do |form| %>
+    <%= form_with model: @user, class: 'login-form', url: user_session_path, method: :post do |form| %>
       <div class="control has-icons-left has-icons-right">
         <%= form.label :email, class: 'label' %>
         <%= form.text_field :email, class: 'input is-success', placeholder: 'Email' %>
@@ -23,6 +23,10 @@
       </div>
 
       <%= form.submit 'Login', class: 'button is-primary' %>
+    <% end %>
+
+    <%= link_to user_registration_path do %>
+      Register
     <% end %>
   </div>
 </section>
