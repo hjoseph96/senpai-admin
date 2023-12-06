@@ -30,14 +30,14 @@ gem "bulma-rails", "~> 0.9.4"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
+  gem "web-console"
 end
 
 gem 'faraday'
 gem 'chartkick'
 gem 'graphlient'
 
-group :development do
-  gem "web-console"
+group :development, :staging do
   gem "pry-rails"
 end
 

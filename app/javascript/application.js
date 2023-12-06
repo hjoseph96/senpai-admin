@@ -4,11 +4,15 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "chartkick"
 import "Chart.bundle"
-import  './users_datatable';
 
 $( document ).on('turbo:load', function() {
-    $("#users-datatable ").DataTable();
-    $("#reports-datatable ").DataTable();
+    const usersDatatable = document.getElementById('users-datatable')
+    if (usersDatatable)
+        $("#users-datatable ").DataTable();
+
+    const reportsDatatable = document.getElementById('reports-datatable')
+    if (reportsDatatable)
+        $("#reports-datatable ").DataTable();
 
 
     const container = document.getElementById('map')
@@ -21,7 +25,7 @@ $( document ).on('turbo:load', function() {
         }).addTo(map);
 
 
-        axios.get('http://localhost:3001/v1/admin/users/all_users').then((response) => {
+        axios.get('https://localhost:3001/v1/admin/users/all_users').then((response) => {
             response.data.forEach((u) => {
                 let iconUrl = ''
 
@@ -56,7 +60,7 @@ $( document ).on('turbo:load', function() {
         new Splide( '#image-carousel').mount();
 
     gallery = document.getElementById('verify-carousel');
-    if (gallery)d
+    if (gallery)
         new Splide( '#verify-carousel', {  perPage: 3, arrows: true, loop: true }).mount();
 
 });

@@ -66,6 +66,7 @@ class InternalRestApi
 
   def fetch_all_users
     res = @conn.get("v1/admin/users/all_users").body
+    binding.pry
     @data = JSON.parse(res, object_class: OpenStruct)
   end
 
