@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Admin::UsersController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     page = strong_params[:page].nil? ? 1 : strong_params[:page]
 

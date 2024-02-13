@@ -61,7 +61,11 @@
     <div class="navbar-item">
       <div class="buttons">
         <a class="button is-primary">
-          <strong>Log in</strong>>
+          <% if user_signed_in? %>
+            <%= link_to 'Log out', destroy_user_session_path, data: { "turbo-method": :delete } %>
+          <% else %>
+            <strong>Log in</strong>>
+          <% end %>
         </a>
       </div>
     </div>
