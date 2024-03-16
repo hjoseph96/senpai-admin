@@ -25,8 +25,11 @@ $( document ).on('turbo:load', function() {
         }).addTo(map);
 
 
-        axios.get('https://staging.senpaiapp.com/v1/admin/users/all_users').then((response) => {
+        axios.get('https://api.senpaiapp.com/v1/admin/users/all_users').then((response) => {
             response.data.forEach((u) => {
+                if (u.latlong.lat === null)
+                    return;
+
                 let iconUrl = ''
 
                 if (u.gender === 'female') {
