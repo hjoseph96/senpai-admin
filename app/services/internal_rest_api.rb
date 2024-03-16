@@ -60,7 +60,6 @@ class InternalRestApi
   end
 
   def fetch_users(page:  1)
-    binding.pry
     res = @conn.get("v1/admin/users?page=#{page}").body
 
     JSON.parse(res, object_class: OpenStruct)
