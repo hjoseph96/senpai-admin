@@ -27,7 +27,7 @@ $( document ).on('turbo:load', function() {
 
         axios.get('https://api.senpaiapp.com/v1/admin/users/all_users').then((response) => {
             response.data.forEach((u) => {
-                if (u.latlong.lat === null)
+                if (u.latlong === null)
                     return;
 
                 let iconUrl = ''
