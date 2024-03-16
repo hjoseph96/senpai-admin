@@ -4,5 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  enum :role, [:admin, :moderator, :influencer]
+  enum :role, [:admin, :moderator]
 end

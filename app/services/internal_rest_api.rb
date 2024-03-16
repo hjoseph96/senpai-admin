@@ -30,11 +30,11 @@ class InternalRestApi
     new.fetch_verify_request(request_id)
   end
 
-  def self.deny(request)
+  def self.deny_verify_request(request)
     new.deny(request)
   end
 
-  def self.approve(request)
+  def self.approve_verify_request(request)
     new.approve(request)
   end
 
@@ -60,13 +60,14 @@ class InternalRestApi
   end
 
   def fetch_users(page:  1)
+    binding.pry
     res = @conn.get("v1/admin/users?page=#{page}").body
+
     JSON.parse(res, object_class: OpenStruct)
   end
 
   def fetch_all_users
     res = @conn.get("v1/admin/users/all_users").body
-    binding.pry
     @data = JSON.parse(res, object_class: OpenStruct)
   end
 

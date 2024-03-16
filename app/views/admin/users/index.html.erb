@@ -29,8 +29,8 @@
           <td><%= user.verified %></td>
           <td><%= user.display_city %></td>
           <td><%= user.display_state %></td>
-          <td><%= user.latlong.lat %></td>
-          <td><%= user.latlong.long %></td>
+          <td><%= user.latlong.try(:lat) %></td>
+          <td><%= user.latlong.try(:long) %></td>
           <td><%= user.age %></td>
           <td><%= user.occupation %></td>
           <td><%= user.created_at %></td>

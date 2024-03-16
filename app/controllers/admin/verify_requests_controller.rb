@@ -14,12 +14,12 @@ class Admin::VerifyRequestsController < ApplicationController
   end
 
   def approve
-    @request = InternalRestApi.approve(strong_params['id'])
+    @request = InternalRestApi.approve_verify_request(strong_params['id'])
     redirect_to verify_requests_path
   end
 
   def deny
-    @request = InternalRestApi.deny(strong_params['id'])
+    @request = InternalRestApi.deny_verify_request(strong_params['id'])
     redirect_to verify_requests_path
   end
 
